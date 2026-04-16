@@ -2,7 +2,7 @@
 
 function Header(){
     return (
-        <header className="bg-[url(./assets/images/pattern-bg-mobile.png)] bg-no-repeat bg-cover h-[300px] flex flex-col items-center text-white">
+        <header className="bg-[url(./assets/images/pattern-bg-mobile.png)] md:bg-[url(./assets/images/pattern-bg-desktop.png)] bg-no-repeat bg-cover h-[300px] flex flex-col items-center text-white">
         <h1 className="font-semibold text-3xl mt-10">IP Address Tracker</h1>
 
         <div className="flex items-center justify-center w-[90%] mt-5">

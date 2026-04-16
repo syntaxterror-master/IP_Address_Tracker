@@ -3,7 +3,7 @@
 function LocationTable() {
     return(
     <div 
-    className="absolute z-50 left-0 py-8 right-0 top-50 m-auto w-[70%] flex flex-col items-center text-center bg-white rounded-xl">
+    className="absolute z-50 left-0 py-8 right-0 top-50 m-auto w-[70%] flex flex-col lg:flex-row lg:justify-around justify-center justify-items-start text-center bg-white rounded-xl">
 
         <div> 
          <h2 className="text-gray-500 text-sm mt-5 font-semibold">IP Address</h2>
