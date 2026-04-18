@@ -8,6 +8,9 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  resolve: {
+  alias: [{ find: "@", replacement: "/src" }],
+  },
   server: {
     proxy: {
       '/api': {
