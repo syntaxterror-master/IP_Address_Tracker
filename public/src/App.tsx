@@ -6,8 +6,10 @@ import { useState } from "react";
 
 function App() {
     const [ locationData, setLocationData ] = useState<Location | null>(null);
+    const [ loading, setLoading ] = useState(false);
     
     const getLocation = async ( address: string ) => {
+      setLoading(true);
       setLocationData(null);
         try {
             const response = await fetch("/api/geolocation", {
@@ -19,18 +21,21 @@ function App() {
             });
             if(response.ok){
                 const data = await response.json();
+                setLoading(false);
                 setLocationData(data)
             }
         } catch (error) {
             console.error("Error fetching geolocation data:", error);
+            setLoading(false);
         }
     }
   
-
+    console.log(locationData);
+    
   return (
     <>
-  <Header onClick={getLocation} />
-  <LocationTable locationData={locationData} />
+  <Header onClick={getLocation} setLoading={setLoading} />
+  <LocationTable locationData={locationData} loading={loading} />
   <Map locationData={locationData} />
     </>
   )

@@ -2,9 +2,10 @@ import { useState } from "react";
 
 interface HeaderProps {
     onClick?: (address: string) => Promise<void>;
+    setLoading: (loading: boolean) => void;
 }
 
-function Header({ onClick }: HeaderProps){
+function Header({ onClick, setLoading }: HeaderProps){
     const [ address, setAddress ] = useState("")
     const [ error, setError ] = useState("");
 
@@ -21,7 +22,7 @@ function Header({ onClick }: HeaderProps){
 
             if(!address.trim()){
                 setError("Please enter a valid IP address or domain or email!");
-                
+                setLoading(false)
                 setTimeout(() => {
                     setError("");
                 }, 3000);
